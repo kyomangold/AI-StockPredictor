@@ -29,4 +29,4 @@ This code is for educational purposes and not intended for actual stock trading.
 
 ## Usage
 Replace the stock symbol in `DataReader` with the desired corporation's stock symbol to analyze different stocks.
-# AI-StockPredictor
+
