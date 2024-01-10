@@ -18,7 +18,7 @@ plt.style.use("fivethirtyeight")
 past_days = 60
 
 # get the stock quote
-df = web.DataReader("GE", data_source="yahoo", start="2012-01-01", end="2022-10-24")
+df = web.DataReader("AAPL", data_source="yahoo", start="2012-01-01", end="2022-10-24")
 
 # visualize closing prize history
 plt.figure(figsize=(16,8))
@@ -113,7 +113,7 @@ plt.legend(["Train","Validation", "Predictions"], loc="lower right")
 plt.show()
 
 # get the quote
-aapl_quote = web.DataReader("GE", data_source="yahoo", start="2012-01-01", end="2022-10-24")
+aapl_quote = web.DataReader("AAPL", data_source="yahoo", start="2012-01-01", end="2022-10-24")
 # creat a new dataframe
 new_df = aapl_quote.filter(["Close"])
 # get last 60 day closing price values and convert df to array
