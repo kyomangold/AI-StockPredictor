@@ -1,1 +1,1 @@
-It seems I couldn't extract any API endpoints from the codebase. This may be due to the absence of any specified endpoints in the provided context. If you have specific code or a framework setup you want me to analyze for API endpoints, please provide that, and I'll do my best to assist you!
+It looks like there are no API endpoints to extract from the codebase. If you believe there should be some, please double-check the code or provide more context on where I should look.
