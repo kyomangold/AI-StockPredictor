@@ -1,23 +1,27 @@
-# Information Flows Documentation
+## Information Flows Description
 
-## Information Flows
+### 1. Earnings Sentiment Flow
+- **Source:** earnings_sentiment
+- **Destination:** OpenAIService
+- **Data Type:** Sentiment Analysis Data
+- **Purpose:** To send earnings sentiment data for external analysis or processing using the OpenAI API. 
 
-### 1. Flow from `portfolio_evaluator` to `OpenAIService`
+### 2. Portfolio Evaluator Flow
 - **Source:** portfolio_evaluator
 - **Destination:** OpenAIService
-- **Data Type:** Unknown (presumably analytical data related to portfolio evaluation)
-- **Purpose:** The flow likely serves to obtain insights or recommendations from an external AI service regarding portfolio evaluation.
+- **Data Type:** Portfolio Evaluation Data
+- **Purpose:** To transmit portfolio evaluation metrics for further examination or enhancement through OpenAI's services.
 
-### 2. Flow from `risk_analyzer` to `OpenAIService`
+### 3. Risk Analyzer Flow
 - **Source:** risk_analyzer
 - **Destination:** OpenAIService
-- **Data Type:** Unknown (presumably data related to risk analysis)
-- **Purpose:** This interaction suggests a request for assessments or predictions from an external AI service, focusing on risk factors.
+- **Data Type:** Risk Assessment Data
+- **Purpose:** To convey risk assessment information for additional analysis or recommendations by OpenAI.
 
-## Flowchart
-
+### Mermaid Flowchart
 ```mermaid
 flowchart TD
+    earnings_sentiment -.->|external| OpenAIService
     portfolio_evaluator -.->|external| OpenAIService
     risk_analyzer -.->|external| OpenAIService
 ```
