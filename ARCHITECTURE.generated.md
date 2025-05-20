@@ -1,83 +1,87 @@
 # Architecture Document
 
 ## Overview
-This document outlines the component design of the system, focusing on its architecture and relationships among different components. The architecture is designed to ensure scalability, maintainability, and flexibility.
+
+This architecture document outlines the design of a modular software system. The system is designed to be scalable, maintainable, and easy to understand. It leverages a component-based architecture that separates concerns and allows for independent development and deployment of each component.
 
 ## Component Design
 
-### 1. User Interface (UI)
-- **Description**: The User Interface is responsible for user interaction. It displays data and receives user inputs.
-- **Responsibilities**:
-  - Render and display content to the user.
-  - Capture user inputs and validate them.
-  - Interact with the backend services to fetch or send data.
+### Components
 
-### 2. Application Logic
-- **Description**: This component contains the business logic of the application.
-- **Responsibilities**:
-  - Process user requests.
-  - Handle data transformations.
-  - Coordinate between the UI and data access layers.
-  
-### 3. Data Access Layer
-- **Description**: This component interacts directly with the database.
-- **Responsibilities**:
-  - Perform Create, Read, Update, and Delete (CRUD) operations.
-  - Abstract the complexity of database queries.
-  - Manage database connections.
+1. **User Interface (UI) Component**
+   - **Purpose**: Responsible for rendering the user interface and handling user interactions.
+   - **Technologies**: React.js (or any other front-end framework)
+   - **Responsibilities**:
+     - Display data provided by the API.
+     - Handle user input and events.
 
-### 4. Database
-- **Description**: The persistent storage for the application.
-- **Responsibilities**:
-  - Store user data and application state.
-  - Ensure data integrity and reliability.
-  - Support complex queries.
+2. **API Gateway Component**
+   - **Purpose**: Acts as a mediator between the UI and backend services.
+   - **Technologies**: Node.js/Express
+   - **Responsibilities**:
+     - Route requests to appropriate backend services.
+     - Aggregate responses from multiple services if necessary.
 
-### 5. External Services
-- **Description**: Integration points for external APIs or third-party services.
-- **Responsibilities**:
-  - Fetch data not stored within the application.
-  - Provide additional functionalities, such as payment processing, geolocation, etc.
+3. **Authentication Service**
+   - **Purpose**: Handles user registration, login, and authentication.
+   - **Technologies**: OAuth 2.0, JWT
+   - **Responsibilities**:
+     - Validate user credentials.
+     - Issue tokens for authenticated sessions.
+
+4. **Data Service**
+   - **Purpose**: Interacts with the database to perform CRUD operations.
+   - **Technologies**: MongoDB/PostgreSQL
+   - **Responsibilities**:
+     - Store and retrieve data as requested by the API Gateway.
+     - Ensure data integrity and security.
+
+5. **Notification Service**
+   - **Purpose**: Manages sending notifications to users based on specific events.
+   - **Technologies**: RabbitMQ/Kafka for messaging
+   - **Responsibilities**:
+     - Receive events and push notifications through various channels (e.g., email, SMS).
 
 ## Class Diagram
-The following Mermaid class diagram illustrates the relationships among the components described above.
+
+The following class diagram illustrates the relationships and structure of the main components.
 
 ```mermaid
 classDiagram
-    class UI {
-        +renderContent()
-        +getUserInput()
-        +displayError()
+    class UserInterface {
+        +render()
+        +handleInput()
     }
-
-    class ApplicationLogic {
-        +processRequest()
-        +transformData()
-        +validateInput()
+    
+    class ApiGateway {
+        +routeRequest()
+        +aggregateResponse()
     }
-
-    class DataAccessLayer {
-        +saveData()
-        +fetchData()
-        +updateData()
+    
+    class AuthenticationService {
+        +register()
+        +login()
+        +validateToken()
     }
-
-    class Database {
-        +query()
-        +connect()
-        +disconnect()
+    
+    class DataService {
+        +create()
+        +read()
+        +update()
+        +delete()
     }
-
-    class ExternalServices {
-        +callAPI()
-        +retrieveData()
+    
+    class NotificationService {
+        +sendNotification()
+        +listenForEvents()
     }
-
-    UI --> ApplicationLogic : interacts >>
-    ApplicationLogic --> DataAccessLayer : uses >>
-    DataAccessLayer --> Database : communicates >>
-    ApplicationLogic --> ExternalServices : calls >>
+    
+    UserInterface --> ApiGateway : communicates with
+    ApiGateway --> AuthenticationService : requests authentication
+    ApiGateway --> DataService : requests data operations
+    NotificationService --> ApiGateway : listens for events
 ```
 
 ## Conclusion
-This architectural design provides a clear structure for developing and maintaining the system. Each component's responsibilities are well-defined to allow for modular development and future enhancements.
+
+This architecture provides a clear, well-defined structure for developing the software system. Each component has specific responsibilities and can be developed and deployed independently, promoting scalability and maintainability. Future enhancements can be easier to implement as new components can be added or existing components can be updated without affecting the entire system.
