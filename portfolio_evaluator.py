@@ -4,7 +4,7 @@ import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def evaluate_portfolio(portfolio):
-    prompt = f"Evaluate the following stock portfolio and suggest improvements: {portfolio}"
+    prompt = f"Evaluate the following stock portfolio and suggest improvements: {portfolio}. Also provide a 90-day forecast for each stock."
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
