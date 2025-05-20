@@ -2,44 +2,44 @@
 
 ## Component/Module Design
 
-The codebase is structured around several key components/modules, each serving a distinct function within the overall architecture:
+The system is structured around several key modules, each responsible for a specific aspect of functionality:
 
-1. **portfolio_evaluator**: This module is likely responsible for assessing the performance of investment portfolios. It may integrate data analysis and reporting functionalities to provide insights on the profitability and risks associated with different portfolios.
+1. **earnings_sentiment**: This module appears to handle sentiment analysis related to earnings reports. It likely processes data surrounding corporate earnings to gauge market sentiment.
 
-2. **stock_fun_fact**: This module could provide interesting facts or trivia about various stocks. It might be aimed at engaging users or providing additional context for stock evaluations.
+2. **portfolio_evaluator**: This module is designed to assess the user's portfolio, potentially providing insights into performance metrics and investment strategies.
 
-3. **llm**: This module presumably refers to a large language model, which could be involved in processing natural language queries, generating textual descriptions, or making predictions based on the data received from other components.
+3. **stock_fun_fact**: This module may generate or fetch interesting facts about stocks, enhancing user interactions with engaging information.
 
-4. **logger**: The logger component is essential for tracking events within the system. It likely deals with logging important information, debugging data, or recording any anomalies observed during execution, ensuring a traceable flow of information for maintenance and auditing.
+4. **llm**: Although not explicitly detailed, the "llm" module is likely related to a language model, which could be utilized for generating textual outputs or analysis based on data provided by other modules.
 
-5. **risk_analyzer**: This module is designed to evaluate the risk associated with investments. It may analyze market trends, historical data, and other relevant indicators to provide insights on potential risks to the portfolio.
+5. **logger**: This module is responsible for logging events, errors, and other significant actions within the system, which is crucial for debugging and monitoring.
 
-6. **data_fetcher**: The data_fetcher module is responsible for gathering data from external sources or databases. This is crucial for providing up-to-date information required for analysis and evaluation by other components.
+6. **risk_analyzer**: This module appears to focus on assessing the risk associated with different investments or the overall portfolio, providing insights into risk management.
 
-7. **main**: The main module likely serves as the entry point of the application, coordinating the interactions between different components and managing the overall workflow.
+7. **data_fetcher**: As the name suggests, this module is responsible for obtaining data from external sources, which is essential for feeding other components with the latest information.
 
-8. **ai_stock_predictor**: This module probably leverages algorithms or machine learning models to predict stock market trends or stock prices, aiding users in making informed investment decisions.
+8. **main**: This module typically serves as the entry point or orchestrator of the application, coordinating interactions among the other modules.
+
+9. **ai_stock_predictor**: This module is likely focused on providing stock predictions powered by artificial intelligence, utilizing data from other modules to make informed forecasts.
 
 ## Module Relationships and Interactions
 
-The relationships and interactions between the modules can be summarized as follows:
+The relationships among the modules aren't explicitly defined in the provided context, leading to some ambiguity. However, we can infer potential interactions based on the likely roles of the components:
 
-- **main** acts as the orchestrator, calling upon all other modules such as **data_fetcher**, **portfolio_evaluator**, **risk_analyzer**, **ai_stock_predictor**, and potentially others to execute its functionalities.
-  
-- **data_fetcher** feeds data into the **portfolio_evaluator** and **risk_analyzer**, ensuring that these modules have the necessary information to perform their assessments.
+- **data_fetcher** likely interacts with both **earnings_sentiment** and **ai_stock_predictor**, supplying them with the necessary data for analysis and prediction.
+- **portfolio_evaluator** may utilize outputs from **risk_analyzer** to assess the performance and risk levels of the portfolios it evaluates.
+- The **logger** will be systematically employed across all modules to track operations and issues.
+- The **llm** module might be invoked by the **ai_stock_predictor** or could assist **stock_fun_fact** in generating narratives or descriptions.
 
-- **logger** interacts with all modules to provide a comprehensive logging mechanism that records various events and actions undertaken throughout the system.
+While these relationships are inferred, explicit interaction pathways or dependencies haven't been illustrated in the provided diagram or description, highlighting an area for potential detail enhancement.
 
-- **llm** may interact with **ai_stock_predictor** to process queries or leverage language understanding capabilities to enhance predictions or data presentations.
+## Mermaid Class Diagram
 
-- **stock_fun_fact** could provide supplementary information to users, possibly interfacing with **portfolio_evaluator** or **ai_stock_predictor** to deliver context around stock evaluations.
-
-- **risk_analyzer** uses data, possibly fetched by **data_fetcher**, to assess risks and may pass its analysis results back to **portfolio_evaluator** for integrated reporting.
-
-## Generated Mermaid Diagram
+Below is the generated class diagram representing the modules within the system:
 
 ```mermaid
 classDiagram
+    class earnings_sentiment
     class portfolio_evaluator
     class stock_fun_fact
     class llm
@@ -50,8 +50,4 @@ classDiagram
     class ai_stock_predictor
 ```
 
-### Diagram Explanation
-
-The provided Mermaid diagram illustrates the different modules in the system as classes. Each class represents a distinct module within the application. The lines between the classes (not visible in this textual representation) would typically represent relationships such as dependencies, interactions, or inheritance. 
-
-However, the specific details of these relationships (such as whether they are associations, compositions, etc.) are not clearly defined in the diagram itself, preventing a complete relational analysis based on visual cues alone. Therefore, the explanation focuses only on what can be observed and deduced from the module descriptions provided earlier.
+This diagram visually summarizes the key components of the system without specifying the relationships among them, leaving room for further clarity on how each module interacts within the architecture.
