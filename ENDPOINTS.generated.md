@@ -1,1 +1,1 @@
-It seems that there are currently no API endpoints extracted from the codebase. If you have any specific code or files that you'd like to provide for analysis, please share them, and I can assist you further.
+It appears that there are no API endpoints available in the current codebase. If you have another codebase to analyze or need assistance with something else, please let me know!
