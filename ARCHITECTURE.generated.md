@@ -2,96 +2,54 @@
 
 ## Overview
 
-This document outlines the component design for our software solution. The architecture is designed to provide scalability, maintainability, and performance. It incorporates both structural and behavioral components, ensuring a clear interaction model and defined responsibilities.
+The architecture of the AI Stock Predictor involves several key components that work together to predict stock prices based on historical data. Each component has a specific role, and together they form the backbone of the application.
 
 ## Component Design
 
-### 1. **User Interface (UI) Layer**
-   - **Description**: Responsible for rendering the user interface and capturing user input.
-   - **Technologies Used**: React, Bootstrap.
+### 1. LLM (Language Learning Model)
+- **Purpose**: The core model that analyzes data and generates predictions based on learned patterns.
+- **Responsibilities**:
+  - Process input data and generate outputs.
+  - Adapt and learn from new data.
 
-### 2. **Service Layer**
-   - **Description**: Contains business logic and handles communication between the UI and data storage layers.
-   - **Technologies Used**: Node.js, Express.
+### 2. Logger
+- **Purpose**: Responsible for logging the system's activities and errors for monitoring and debugging.
+- **Responsibilities**:
+  - Capture and store logs of predictions made.
+  - Record errors encountered during the execution.
 
-### 3. **Data Access Layer**
-   - **Description**: Interfaces with the database to perform CRUD operations and retrieve data.
-   - **Technologies Used**: Sequelize ORM, PostgreSQL.
+### 3. Data Fetcher
+- **Purpose**: A service responsible for retrieving historical stock data from various sources.
+- **Responsibilities**:
+  - Connect to APIs or databases to fetch relevant stock data.
+  - Process incoming data and prepare it for analysis.
 
-### 4. **Database**
-   - **Description**: Where all persistent data is stored and managed.
-   - **Technologies Used**: PostgreSQL Database.
+### 4. Main
+- **Purpose**: This is the entry point of the application which orchestrates the flow between various components.
+- **Responsibilities**:
+  - Initialize and configure the application components.
+  - Manage the data flow between the Fetcher, LLM, and Logger.
 
-### 5. **API Layer**
-   - **Description**: Exposes RESTful APIs for communication between the frontend and backend.
-   - **Technologies Used**: Express, JWT for authentication.
-
-### 6. **Authentication Service**
-   - **Description**: Handles user authentication and authorization.
-   - **Technologies Used**: JSON Web Tokens, Passport.js.
-
-### 7. **Logging and Monitoring Service**
-   - **Description**: Manages logs and system metrics.
-   - **Technologies Used**: Winston, Prometheus for monitoring.
-
-## Component Interaction
-
-- The UI Layer communicates with the Service Layer to perform business operations.
-- The Service Layer interacts with the Data Access Layer to fetch or manipulate data.
-- The API Layer facilitates requests from the UI to the Service Layer and returns responses.
-- The Authentication Service verifies user credentials and issues tokens for session management.
+### 5. AI Stock Predictor
+- **Purpose**: The high-level component that coordinates everything to provide stock predictions.
+- **Responsibilities**:
+  - Utilize the LLM for predictions.
+  - Use the Data Fetcher for acquiring new data.
+  - Log predictions through the Logger.
 
 ## Class Diagram
 
-Below is the class diagram representing the components and their relationships:
+The following Mermaid class diagram illustrates the relationships and structure of the components:
 
 ```mermaid
 classDiagram
-    class UserInterface {
-        + render()
-        + getUserInput()
-    }
-    
-    class ServiceLayer {
-        + handleRequest()
-        + manageBusinessLogic()
-    }
-    
-    class DataAccessLayer {
-        + create()
-        + read()
-        + update()
-        + delete()
-    }
-    
-    class Database {
-        + connect()
-        + query()
-    }
-    
-    class ApiLayer {
-        + fetchData()
-        + sendData()
-    }
-    
-    class AuthenticationService {
-        + validateUser()
-        + generateToken()
-    }
-    
-    class LoggingService {
-        + logError()
-        + logInfo()
-    }
-
-    UserInterface --> ServiceLayer
-    ServiceLayer --> DataAccessLayer
-    DataAccessLayer --> Database
-    ServiceLayer --> ApiLayer
-    ServiceLayer --> AuthenticationService
-    LoggingService --> ServiceLayer
+    class llm
+    class logger
+    class data_fetcher
+    class main
+    class ai_stock_predictor
 ```
 
 ## Conclusion
 
-The architecture outlined in this document provides a solid foundation for developing a scalable and maintainable application. The component design supports clear responsibilities and interactions between different layers, facilitating a modular approach to software development.
+This architecture provides a structured approach to building the AI Stock Predictor application, allowing for scalability, maintainability, and efficient data processing. Each component plays a crucial role in ensuring that the system performs optimally while providing accurate predictions.
