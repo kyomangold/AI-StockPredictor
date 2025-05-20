@@ -1,36 +1,25 @@
 # Project Title
 
 ## Summary
-This repository is designed to provide an efficient solution for [describe the main functionality of the repository, e.g., managing user authentication, processing payments, providing data analytics, etc.]. It aims to streamline [specific processes or tasks] in order to enhance [outcomes/efficiency/experience].
+This repository is designed to facilitate automated documentation generation for codebases, streamlining the process of creating comprehensive README files and related documentation.
 
 ## Key Modules
-- **Module 1**: [Brief description of module 1]
-- **Module 2**: [Brief description of module 2]
-- **Module 3**: [Brief description of module 3]
+- **autodocu**: Main module that handles the extraction of information from the codebase and formats it into a README.
+- **parser**: A utility for parsing various code files and extracting relevant documentation comments.
+- **formatter**: Module to format the extracted information into Markdown.
 
 ## Installation
-To install the project, follow these steps:
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd [project-directory]
-   ```
-3. Install the required dependencies:
-   ```bash
-   npm install
-   ```
+To install the necessary dependencies, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Quick Start
-To get started quickly:
-1. Start the server:
-   ```bash
-   npm start
-   ```
-2. Access the application at `http://localhost:[port]`.
+To generate a README file for your project, use the following command:
 
-3. [Any additional setup or initial configuration required].
+```bash
+python -m autodocu
+```
 
-Feel free to contribute or raise issues through the GitHub repository. For more detailed documentation, refer to [link to documentation].
+Make sure you are in the root directory of your project when you execute this command. The generated README will be saved to the project root.
