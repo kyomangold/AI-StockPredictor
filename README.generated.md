@@ -1,25 +1,35 @@
 # Project Title
 
-## Summary
-This repository is designed to facilitate automated documentation generation for codebases, streamlining the process of creating comprehensive README files and related documentation.
+## Overview
+This repository provides a comprehensive solution for ... [insert description of what the project does].
 
 ## Key Modules
-- **autodocu**: Main module that handles the extraction of information from the codebase and formats it into a README.
-- **parser**: A utility for parsing various code files and extracting relevant documentation comments.
-- **formatter**: Module to format the extracted information into Markdown.
+- **Module 1**: [Description of Module 1]
+- **Module 2**: [Description of Module 2]
+- **Module 3**: [Description of Module 3]
 
 ## Installation
-To install the necessary dependencies, run the following command:
-
+To install the project, run the following command:
 ```bash
-pip install -r requirements.txt
+pip install [package-name]
 ```
+[Add any additional installation steps required]
 
 ## Quick Start
-To generate a README file for your project, use the following command:
+To get started quickly, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd [project-directory]
+   ```
+3. Execute the main script:
+   ```bash
+   python main.py
+   ```
+4. [Add any further instructions or commands necessary to run the project] 
 
-```bash
-python -m autodocu
-```
-
-Make sure you are in the root directory of your project when you execute this command. The generated README will be saved to the project root.
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
