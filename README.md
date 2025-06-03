@@ -7,7 +7,7 @@ This AI Stock Predictor employs a Long Short-Term Memory (LSTM) network to predi
 This code is for educational purposes and not intended for actual stock trading.
 
 ## Features
-- Utilizes LSTM, a type of Recurrent Neural Network.
+- Utilizes LSTM, a type of Recurrent Neural Network (RNN).
 - Predicts stock prices based on historical data.
 - Includes visualization of stock price trends.
 - Modular design with additional AI-powered analysis tools.
