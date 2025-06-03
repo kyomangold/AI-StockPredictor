@@ -12,7 +12,7 @@ This code is for educational purposes and not intended for actual stock trading.
 - Includes visualization of stock price trends.
 - Modular design with additional AI-powered analysis tools.
 - Fun stock facts and logging utilities.
-- Portfolio evaluation, risk analysis, and sentiment analysis using OpenAI's GPT models.
+- Portfolio evaluation, risk analysis, and sentiment analysis using OpenAI's GPT models (LLMs).
 
 
 ## Libraries Used
