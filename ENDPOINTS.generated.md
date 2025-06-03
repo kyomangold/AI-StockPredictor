@@ -1,1 +1,6 @@
-It appears that there are no API endpoints available in the current codebase. If you have another codebase to analyze or need assistance with something else, please let me know!
+# API Endpoints Overview
+A high-level description of the API endpoints.
+
+## API Endpoints
+| Path | HTTP Method | Function Name | Short Description |
+|------|-------------|---------------|-------------------|
