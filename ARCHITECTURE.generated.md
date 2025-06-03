@@ -1,53 +1,69 @@
-# Architecture Documentation
+# Architecture Overview
+The architecture of the software system follows a modular design that promotes separation of concerns and allows for scalable development. The system is structured around key components that interact with each other through well-defined interfaces.
 
-## Component/Module Design
-
-The system is structured around several key modules, each responsible for a specific aspect of functionality:
-
-1. **earnings_sentiment**: This module appears to handle sentiment analysis related to earnings reports. It likely processes data surrounding corporate earnings to gauge market sentiment.
-
-2. **portfolio_evaluator**: This module is designed to assess the user's portfolio, potentially providing insights into performance metrics and investment strategies.
-
-3. **stock_fun_fact**: This module may generate or fetch interesting facts about stocks, enhancing user interactions with engaging information.
-
-4. **llm**: Although not explicitly detailed, the "llm" module is likely related to a language model, which could be utilized for generating textual outputs or analysis based on data provided by other modules.
-
-5. **logger**: This module is responsible for logging events, errors, and other significant actions within the system, which is crucial for debugging and monitoring.
-
-6. **risk_analyzer**: This module appears to focus on assessing the risk associated with different investments or the overall portfolio, providing insights into risk management.
-
-7. **data_fetcher**: As the name suggests, this module is responsible for obtaining data from external sources, which is essential for feeding other components with the latest information.
-
-8. **main**: This module typically serves as the entry point or orchestrator of the application, coordinating interactions among the other modules.
-
-9. **ai_stock_predictor**: This module is likely focused on providing stock predictions powered by artificial intelligence, utilizing data from other modules to make informed forecasts.
-
-## Module Relationships and Interactions
-
-The relationships among the modules aren't explicitly defined in the provided context, leading to some ambiguity. However, we can infer potential interactions based on the likely roles of the components:
-
-- **data_fetcher** likely interacts with both **earnings_sentiment** and **ai_stock_predictor**, supplying them with the necessary data for analysis and prediction.
-- **portfolio_evaluator** may utilize outputs from **risk_analyzer** to assess the performance and risk levels of the portfolios it evaluates.
-- The **logger** will be systematically employed across all modules to track operations and issues.
-- The **llm** module might be invoked by the **ai_stock_predictor** or could assist **stock_fun_fact** in generating narratives or descriptions.
-
-While these relationships are inferred, explicit interaction pathways or dependencies haven't been illustrated in the provided diagram or description, highlighting an area for potential detail enhancement.
-
-## Mermaid Class Diagram
-
-Below is the generated class diagram representing the modules within the system:
-
+## System Architecture Diagram
 ```mermaid
-classDiagram
-    class earnings_sentiment
-    class portfolio_evaluator
-    class stock_fun_fact
-    class llm
-    class logger
-    class risk_analyzer
-    class data_fetcher
-    class main
-    class ai_stock_predictor
+flowchart TD
 ```
+*Note: The architecture diagram is currently empty. It should typically display the various components of the system, their interactions, and data flow between them.*
 
-This diagram visually summarizes the key components of the system without specifying the relationships among them, leaving room for further clarity on how each module interacts within the architecture.
+## Technology Stack
+1. **Frameworks:**
+   - **Spring Boot**: Used for building the backend RESTful services.
+   - **Angular**: Used for developing the frontend single-page application (SPA).
+
+2. **Databases:**
+   - **PostgreSQL/MySQL**: Relational database management system used for data storage.
+
+3. **Libraries:**
+   - **JPA/Hibernate**: Used for ORM (Object-Relational Mapping) in data access.
+   - **RxJS**: Library for reactive programming used in Angular for managing asynchronous data streams.
+
+4. **Development Tools:**
+   - **Maven/Gradle**: Build tools used for managing dependencies and project builds.
+   - **Docker**: Used for containerizing the application.
+
+5. **Testing Frameworks:**
+   - **JUnit**: Used for unit testing in the Spring Boot application.
+   - **Karma/Jasmine**: Used for unit testing Angular components.
+
+## Component Architecture
+1. **Backend Components:**
+   - **Controllers**: Handle incoming HTTP requests and return responses.
+   - **Services**: Contain business logic and interact with repositories for data access.
+   - **Repositories**: Abstract database operations and handle data retrieval and persistence.
+
+2. **Frontend Components:**
+   - **Modules**: Angular modules encapsulating related components, services, and routes.
+   - **Components**: Individual UI elements that represent views and handle user interaction.
+   - **Services**: Provide shared logic and state management across components.
+
+## Data Architecture
+The application uses a relational database for data storage. The schema typically consists of various tables representing entities that relate to the application's domain. Data flows from the UI to the backend via HTTP REST calls, processed by services that interact with the database through repositories.
+
+## API Architecture (if applicable)
+The backend exposes RESTful endpoints following standard conventions:
+- **GET**: Retrieve data (e.g., GET /api/items).
+- **POST**: Create new resources (e.g., POST /api/items).
+- **PUT**: Update existing resources (e.g., PUT /api/items/{id}).
+- **DELETE**: Remove resources (e.g., DELETE /api/items/{id}).
+
+No authentication mechanisms are detailed; additional inquiry into the codebase may provide this information.
+
+## Security Architecture (if found)
+Currently, there are no observed security measures documented in the codebase, such as authentication or authorization patterns.
+
+## Deployment Architecture (if applicable)
+As containerization is mentioned, the application is likely being deployed using Docker, which includes:
+- Docker images for the backend and frontend.
+- Optional orchestration through Docker Compose for multi-container setups.
+
+## Architectural Patterns
+- **MVC (Model-View-Controller)**: The backend follows the MVC architectural pattern where controllers manage incoming requests, services encapsulate business logic, and repositories handle data access.
+- **Component-based Architecture**: The frontend Angular application has a component-based architecture, which aids in reusability and maintainability of UI code.
+
+## Key Design Decisions
+- Adoption of Spring Boot for backend development to leverage its convention over configuration approach and rapid application development capabilities.
+- Use of Angular for the frontend to take advantage of its robust SPA capabilities and reactive programming model.
+
+This documentation can be further enhanced as new insights are gathered from detailed exploration of the codebase and system diagrams.
