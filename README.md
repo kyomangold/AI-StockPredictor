@@ -1,7 +1,7 @@
 # AI Stock Predictor Using LSTM
 
 ## Description
-This AI Stock Predictor employs a Long Short-Term Memory (LSTM) network to predict the closing stock price of a corporation based on the past 60 days' stock prices. 
+This AI Stock Predictor employs a Long Short-Term Memory (LSTM) network to predict the closing stock price of a company based on the past 60 days' stock prices. 
 
 ## Disclaimer
 This code is for educational purposes and NOT intended for actual stock trading.
