@@ -35,3 +35,12 @@ This code is for educational purposes and not intended for actual stock trading.
 ## Usage
 Replace the stock symbol in `DataReader` with the desired corporation's stock symbol to analyze different stocks.
 
+## Project Structure
+- main.py: LSTM-based stock price prediction.
+- ai_stock_predictor.py: Simple AI-based stock prediction.
+- portfolio_evaluator.py: Portfolio evaluation using GPT.
+- risk_analyzer.py: Risk analysis using GPT.
+- earnings_sentiment.py: Earnings sentiment analysis.
+- stock_fun_fact.py: Fun stock facts.
+- logger.py: Logging predictions.
+- data_fetcher.py: Fetches historical stock data.
