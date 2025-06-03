@@ -30,6 +30,7 @@ This code is for educational purposes and not intended for actual stock trading.
 - Model compilation and training.
 - Stock price prediction and evaluation.
 - Visualization of training and prediction results.
+- Modular scripts for portfolio evaluation, risk analysis, and sentiment analysis.
 
 ## Usage
 Replace the stock symbol in `DataReader` with the desired corporation's stock symbol to analyze different stocks.
