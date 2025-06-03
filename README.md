@@ -10,6 +10,10 @@ This code is for educational purposes and not intended for actual stock trading.
 - Utilizes LSTM, a type of Recurrent Neural Network.
 - Predicts stock prices based on historical data.
 - Includes visualization of stock price trends.
+- Modular design with additional AI-powered analysis tools.
+- Fun stock facts and logging utilities.
+- Portfolio evaluation, risk analysis, and sentiment analysis using OpenAI's GPT models.
+
 
 ## Libraries Used
 - TensorFlow
